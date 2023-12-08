@@ -2,9 +2,14 @@
 https://www.amazon.co.jp/%E5%BE%8C%E6%82%94%E3%81%97%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%AESpring-Boot-%E5%85%A5%E9%96%80%E6%9B%B8%EF%BC%9ASpring-%E8%A7%A3%E4%BD%93%E6%96%B0%E6%9B%B8%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89-Spring%E8%A7%A3%E4%BD%93%E6%96%B0%E6%9B%B8-ebook/dp/B08XPBPH9C
 
 # DEMO  
-![20231208成果物①](https://github.com/f1351050/springKaitaisyo/assets/126868552/103065f2-508d-4f30-9820-557ecc70d0a6)
+![20231208成果物①](https://github.com/f1351050/springKaitaisyo/assets/126868552/103065f2-508d-4f30-9820-557ecc70d0a6)  
+[画面１]  
 ![スクリーンショット 2023-12-08 171316](https://github.com/f1351050/springKaitaisyo/assets/126868552/a491e066-5b70-4943-bb66-8f3f19044a41)
 
+#　20231208機能
+・新規登録の際に、入力内容チェック、エラー表示
+　※データべース登録は未実装
+・ログインから画面1への画面遷移
 
 # 1-3章メモ
 # アノテーションメモ  
