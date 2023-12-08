@@ -16,5 +16,5 @@ public class SignupForm {
 	private Date birthday;
 	
 	private Integer age;
-	private Integer gendar;
+	private Integer gender;
 }
