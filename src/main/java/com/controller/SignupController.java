@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,14 @@ public class SignupController {
 	private UserApplicationService userApplicationService;
 	
 	@GetMapping("/signup")
-	private String getSingup(Model model) {
-		Map<String,Integer> gendarMap = userApplicationService.getGendarMap();
+	public String getSingup(Model model,Locale locale) {
+		Map<String,Integer> gendarMap = userApplicationService.getGendarMap(locale);
 		model.addAttribute("gendarMap",gendarMap);
 		return "user/signup";
 	}
 	
 	@PostMapping("/signup")
 	public String postSignup() {
-		return "redirect/login";
+		return "redirect:/login";
 	}
 }
