@@ -1,5 +1,6 @@
 package com.controller;
 
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,9 @@ public class UserDetailController {
 	{
 		MUser user = userService.getUserOne(userId);
 		user.setPassword(null);
+		
 		form = modelMapper.map(user, UserDetailForm.class);
+		form.setSalaryList(user.getSalaryList());
 		
 		model.addAttribute("userDetailForm",form);
 		
