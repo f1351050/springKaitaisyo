@@ -15,6 +15,12 @@
 		<result column = "gender" property="gender" />
 		<result column = "department_id" property="departmentId" />
 		<result column = "role" property="role" />
+		<association property="department" resultMap="department" />
+	</resultMap>
+	
+	<resultMap type="com.domain.user.model.Department" id="department">
+		<id column="department_id" property="departmentId" />
+		<result column="department_name" property="departmentName" />
 	</resultMap>
  
 	 <insert id="insertOne">
@@ -66,6 +72,10 @@
 		from
 		 
 		 m_user
+		 
+		left join m_department
+		 
+		 on m_user.department_id = m_department.department_id
 		 
 		where
 		
