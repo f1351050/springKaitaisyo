@@ -24,5 +24,5 @@ CREATE TABLE IF NOT EXISTS employee(
   user_id VARCHAR(50)
   ,year_month VARCHAR(50)
   ,salary INT
-  ,PRYMARY KEY(user_id,year_month)
+  ,PRIMARY KEY(user_id,year_month)
  );
