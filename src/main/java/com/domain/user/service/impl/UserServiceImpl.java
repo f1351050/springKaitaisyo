@@ -23,9 +23,10 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public List<MUser> getUsers(){
-		return mapper.findMany();
+	public List<MUser> getUsers(MUser user){
+		return mapper.findMany(user);
 	}
+	
 	
 	@Override
 	public MUser getUserOne(String userId) {
@@ -41,4 +42,5 @@ public class UserServiceImpl implements UserService {
 	public void deleteUserOne(String userId) {
 		int count = mapper.deleteOne(userId);
 	}
+
 }
