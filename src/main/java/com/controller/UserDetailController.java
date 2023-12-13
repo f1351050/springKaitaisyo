@@ -1,6 +1,5 @@
 package com.controller;
 
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +13,11 @@ import com.domain.user.model.MUser;
 import com.domain.user.service.UserService;
 import com.form.UserDetailForm;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/user")
+@Slf4j
 public class UserDetailController {
 	
 	@Autowired
@@ -30,9 +32,7 @@ public class UserDetailController {
 	{
 		MUser user = userService.getUserOne(userId);
 		user.setPassword(null);
-		
 		form = modelMapper.map(user, UserDetailForm.class);
-		form.setSalaryList(user.getSalaryList());
 		
 		model.addAttribute("userDetailForm",form);
 		
@@ -41,8 +41,12 @@ public class UserDetailController {
 	
 	@PostMapping(value = "/detail",params="update")
 	public String updateUser(UserDetailForm form,Model model) {
-		userService.updateUserOne(form.getUserId(),form.getPassword(),form.getUserName());
-		return "redirect:/user/list";
+		try {
+			userService.updateUserOne(form.getUserId(),form.getPassword(),form.getUserName());
+		}catch(Exception e) {
+			log.error("ユーザー更新でエラー",e);
+		}
+			return "redirect:/user/list";
 	}
 	
 	@PostMapping(value="/detail",params="delete")
