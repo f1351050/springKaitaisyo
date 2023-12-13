@@ -22,7 +22,7 @@ public class LogAspect {
 	
 	@After("execution(* *..*.*UserService.*(..))")
 	public void endLog(JoinPoint jp) {
-		log.info("メソッド修了:"+jp.getSignature());
+		log.info("メソッド終了:"+jp.getSignature());
 	}
 	
 	//@Around("bean(*Controller)")
@@ -39,7 +39,7 @@ public class LogAspect {
 			return result;
 			
 		}catch(Exception e) {
-			log.error("メソッド異常修了:"+jp.getSignature());
+			log.error("メソッド異常終了:"+jp.getSignature());
 			throw e;
 		}
 	
